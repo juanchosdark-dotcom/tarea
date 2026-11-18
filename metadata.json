@@ -1,0 +1,6 @@
+{
+  "name": "Taylor CNC",
+  "description": "Calculadora de desgaste y vida útil de herramientas de corte mediante la Ecuación de Taylor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

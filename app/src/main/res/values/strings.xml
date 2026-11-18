@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Taylor CNC</string>
+    <string name="header_title">Ecuación de Taylor</string>
+    <string name="header_subtitle">Desgaste y vida útil de herramientas</string>
+    <string name="cd_banner_image">Ilustración de herramienta de corte CNC</string>
+    <string name="cd_reference_table">Abrir tabla de parámetros n y C</string>
+    <string name="cd_calculate_icon">Calcular vida útil</string>
+    <string name="cd_error_icon">Error de validación</string>
+    <string name="section_inputs_title">Parámetros de mecanizado</string>
+    <string name="label_material">Material de la pieza</string>
+    <string name="label_tool">Herramienta de corte</string>
+    <string name="label_velocity">Velocidad de corte (V)</string>
+    <string name="hint_velocity">Ej. 120</string>
+    <string name="unit_m_min">m/min</string>
+    <string name="unit_min">min</string>
+    <string name="action_calculate">Calcular</string>
+    <string name="action_close">Cerrar</string>
+    <string name="error_velocity_empty">Ingresa una velocidad de corte (V) en m/min.</string>
+    <string name="error_velocity_invalid">Ingresa un valor numérico válido para la velocidad.</string>
+    <string name="error_velocity_non_positive">La velocidad de corte (V) debe ser mayor a 0 m/min.</string>
+    <string name="result_tool_life_title">Vida útil estimada (T)</string>
+    <string name="result_new_speed_title">Velocidad para 2× vida útil</string>
+    <string name="result_breakdown_title">Desglose paso a paso</string>
+    <string name="result_chart_title">Curva de Taylor (V vs T)</string>
+    <string name="empty_state_title">Listo para calcular</string>
+    <string name="empty_state_body">Selecciona el material, elige la herramienta (HSS o Carburo) e ingresa la velocidad de corte mayor a 0 para obtener la vida útil y el desglose completo.</string>
+    <string name="reference_sheet_title">Diccionario de parámetros (n, C)</string>
+    <string name="reference_sheet_subtitle">Toca una fila para cargarla en la calculadora</string>
+</resources>
