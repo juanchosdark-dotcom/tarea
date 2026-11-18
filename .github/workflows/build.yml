@@ -1,0 +1,19 @@
+name: Build Android APK
+on: [push,workflow_dispatch]
+jobs:
+    build:
+        runs_on: ubuntu_latest
+        steps:
+            - uses: actions/checout@v4
+            - uses: actions/setup_java@v4
+              with:
+                  distribution: `termurin`
+                  java-version: `17`
+            - name: Make Gradle executable
+              run: chmod +x gradlew
+            - name: Build APK Artifact
+              uses: actions/upload-artifact@v4
+             with: 
+                 name: app-debug
+                 path: app/build/outputs/apk/debug/app-debug.apk
+    
