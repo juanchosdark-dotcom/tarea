@@ -4,22 +4,14 @@ workflows:
     max_build_duration: 30
     environment:
       java: 17
-      gradle: 9.3.1
     scripts:
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
-      - name: Grant execute permission for gradlew
+      - name: Download and build with Gradle 9.3.1
         script: |
-          if [ -f "gradlew" ]; then
-            chmod +x gradlew
-          fi
-      - name: Build Android debug APK
-        script: |
-          if [ -f "gradlew" ]; then
-            ./gradlew assembleDebug
-          else
-            gradle assembleDebug
-          fi
+          curl -L -o gradle.zip https://services.gradle.org/distributions/gradle-9.3.1-bin.zip
+          unzip -q gradle.zip
+          ./gradle-9.3.1/bin/gradle assembleDebug
     artifacts:
       - app/build/outputs/**/*.apk
