@@ -8,9 +8,15 @@ workflows:
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
-      - name: Grant execute permission for gradlew
-        script: chmod +x gradlew
       - name: Build Android debug APK
-        script: ./gradlew assembleDebug
+        script: |
+          # Si gradlew está en la raíz, le damos permisos y compilamos
+          if [ -f "gradlew" ]; then
+            chmod +x gradlew
+            ./gradlew assembleDebug
+          else
+            # Si no está en la raíz, buscamos dentro de la estructura estándar
+            gradle assembleDebug
+          fi
     artifacts:
       - app/build/outputs/**/*.apk
