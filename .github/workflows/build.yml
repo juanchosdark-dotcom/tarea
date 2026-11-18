@@ -7,7 +7,7 @@ jobs:
             - uses: actions/checout@v4
             - uses: actions/setup_java@v4
               with:
-                  distribution: `termurin`
+                  distribution: 'termurin'
                   java-version: `17`
             - name: Make Gradle executable
               run: chmod +x gradlew
